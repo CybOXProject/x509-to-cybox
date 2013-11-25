@@ -1,58 +1,60 @@
-****************************************************
+X.509 Certificate to CybOX XML Converter
+========================================
 
- X509 Certificate -> CybOX XML Converter Script
+Generate CybOX XML from an X.509 Certificate file
 
- Copyright (c) 2013 - The MITRE Corporation
- All rights reserved. See LICENSE.txt for complete terms.
+**Version**: 0.2 BETA
 
-****************************************************
+    Copyright (c) 2013 - The MITRE Corporation
+    All rights reserved. See LICENSE.txt for more details.
 
-BY USING THE X509 TO CYBOX SCRIPT, YOU SIGNIFY YOUR ACCEPTANCE OF THE TERMS AND 
-CONDITIONS OF USE.  IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE THIS SCRIPT.
+    BY USING THIS PROGRAM, YOU SIGNIFY YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS
+    OF USE.  IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE THIS PROGRAM.
 
-#################################################################
-#Generates CybOX Output from an X509 Certificate txt file       #
-#Compatible with CybOX v2.0.1                                   #
-#                                                               #
-#v0.2 - BETA                                                    #
-#06/18/2013                                                     #
-#                                                               #
-#################################################################
-# CybOX - http://cybox.mitre.org                                #
-#################################################################
---------------------------------------------------------------------------------
---Installation Notes------------------------------------------------------------
 
-Extract included files into your directory of choice. This script is dependent on the following libraries:
+Overview
+--------
 
-+ python-cybox v2.0.1.x
+The X509-to-CybOX program parses an X.509 certificate (saved as plain text) and
+creates a CybOX document containing a corresponding X509Certificate object.
 
-Install python-cybox with the following command:
-$ pip install cybox
+Compatible with:
+* [CybOX 2.0.1](http://cybox.mitre.org/language/version2.0.1/)
 
-This script was created using Python 2.7.x, and so may not be compatible with 3.0.x.
---------------------------------------------------------------------------------
---Included Files----------------------------------------------------------------
+Installation
+------------
 
-README: this file.
-x509_to_cybox.py: the X509 to CybOX XML Python converter script.
-terms.txt: the terms of use for this script.
-\example: a folder with an example input/output.
---------------------------------------------------------------------------------
---Usage Notes-------------------------------------------------------------------
-This script supports the parsing and conversion of one or more X509 certificates
-captured in a linefeed ('\n') delimited text file into CybOX. A single Observable
-will be created for each certificate.
+Download and extract the included files into your directory of choice. 
 
-There are two main command line parameters for this script:
+X509-to-CybOX requires Python 2.X. It was developed using Python 2.7, and may work 
+under Python 2.6. It is not compatible with Python 3.
 
--i: the path to the input X509 certificate text file
+### Dependencies 
 
--o: the path to the output CybOX XML file
+* [python-cybox](https://pypi.python.org/pypi/cybox) - A Python library for CybOX
 
-To use the script, run the following command:
+You can install the dependencies using pip:
 
-python x509_to_cybox.py -i <x509 certificate text file> -o <cybox xml file>
+    $ pip install cybox
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+**NOTE**: Installing LXML (which python-cybox depends on) on Ubuntu requrires the
+python-dev, libxml2-dev, and libxslt1-dev packages to be installed. 
+Follow the link for instructions on installing python-cybox and LXML on Windows.
+
+Usage
+-----
+
+    python x509_to_cybox.py -i <x509 cert txt file> -o <cybox xml file>
+
+### Example files
+
+X509-to-CybOX comes with example input and output files. You can use these to see an example
+of the program's output, or to verify that you have installed to program correctly:
+
+    $ python x509_to_cybox.py -i examples/x509.in.txt -o x509.xml
+    $ diff x509.xml examples/x509.out.xml
+
+More information
+----------------
+
+* CybOX - http://cybox.mitre.org/
