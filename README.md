@@ -49,7 +49,7 @@ Usage
 ### Example files
 
 X509-to-CybOX comes with example input and output files. You can use these to see an example
-of the program's output, or to verify that you have installed to program correctly:
+of the program's output, or to verify that you have installed the program correctly:
 
     $ python x509_to_cybox.py -i examples/x509.in.txt -o x509.xml
     $ diff x509.xml examples/x509.out.xml
