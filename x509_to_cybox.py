@@ -1,8 +1,7 @@
-# Copyright (c) 2013, The MITRE Corporation. All rights reserved.
+# Copyright (c) 2014, The MITRE Corporation. All rights reserved.
 # See LICENSE.txt for complete terms.
 
 #X509 Certificate -> CybOX Observables Script
-#v0.2 **BETA**
 #https://github.com/CybOXProject/Tools for latest version
 
 import sys
@@ -238,7 +237,7 @@ def usage():
     
 USAGE_TEXT = """
 X509 Certificate --> CybOX XML Converter Utility
-v0.2 BETA // Compatible with CybOX v2.0
+v2.1.0 // Compatible with CybOX v2.1
 
 Usage: python openioc_to_cybox.py -i <x509 cert txt file> -o <cybox xml file>
 """
